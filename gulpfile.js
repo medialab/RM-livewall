@@ -25,7 +25,9 @@ gulp.task('js', function() {
       './bower_components/jquery-oembed-all/jquery.oembed.js',
       './bower_components/lodash/lodash.js',
       './bower_components/handlebars/handlebars.min.js',
-      './bower_components/tabletop/src/tabletop.js'
+      './bower_components/tabletop/src/tabletop.js',
+      './bower_components/jquery.scrollTo/jquery.scrollTo.min.js',
+      './/bower_components/bootstrap/js/affix.js'
       ],
       {base: 'bower_components/'}
     )

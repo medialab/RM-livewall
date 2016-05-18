@@ -2,14 +2,17 @@
 
 {{#each procedures}}
 
-  <div class="row">
-    <h1>{{@key}}</h1>
-    <hr>
+  <div class="section">
+    <h1>procedure {{@key}}</h1>
     {{#each this}}
-      <div class="col-sm-4">
-        <a href="{{url}}" class="embed"></a>
-      </div>
+      {{#newLine @index}}<div class="row line">{{/newLine}}
+        <div class="col-sm-4 embedContainer">
+          <a href="{{url}}" class="embed"></a>
+        </div>
+      {{#newLine @index}}</div>{{/newLine}}
     {{/each}}
+
+
 
   </div>
 

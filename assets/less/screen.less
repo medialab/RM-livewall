@@ -9,13 +9,38 @@ body {
   /*background-color: grey;*/
    font-family: NovelPro-SemiBold;
    color:@aimeRed;
+   padding-bottom: 100vh;
 
+   .embedContainer {
+    padding-top: 20vh;
+      height: 80vh;
+  }
+
+  overflow: hidden;
 }
+
+
 
 h1 {
-  text-align: center;
-
+ display: none;
 }
+
+.fixed {
+
+  h1:first-child {
+    position:fixed;
+    top:0;
+    width: 100%;
+    padding: 5vh;
+    margin: 0;
+    text-align: center;
+    background-color: white;
+    display: block;
+    z-index: 9000;
+  }
+}
+
+
   twitterwidget {
     float: left;
   }
@@ -66,3 +91,5 @@ h1 {
   .flickr-embed-frame {
     display: none;
   }
+
+
