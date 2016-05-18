@@ -4,8 +4,13 @@
 .embed {
   width: 100%;
 }
+
 @aimeRed : #c0171d;
+
+@font-size-base: 20px;
+
 body {
+
   /*background-color: grey;*/
    font-family: NovelPro-SemiBold;
    color:@aimeRed;
@@ -19,15 +24,10 @@ body {
   overflow: hidden;
 }
 
-
-
-h1 {
- display: none;
-}
+.title { display: none; }
 
 .fixed {
-
-  h1:first-child {
+  .title:first-child {
     position:fixed;
     top:0;
     width: 100%;
@@ -41,47 +41,43 @@ h1 {
 }
 
 
-  twitterwidget {
-    float: left;
+twitterwidget {
+  float: left;
+}
+
+twitterwidget::shadow {
+
+  .FollowButton, .Tweet-actions, time{
+    visibility: hidden;
   }
 
-  twitterwidget::shadow {
-
-    .FollowButton, .Tweet-actions, time{
-      visibility: hidden;
-    }
-
-    .TweetAuthor, .Icon--twitter {
-      display: none;
-    }
-
-    .EmbeddedTweet-ancestor blockquote {
-      padding-left: 0;
-    }
-
-    .PrettyLink.media {
-      display: none;
-    }
-
-
-    * {
-      border-radius: 0;
-      border:none;
-      background-color: white !important;
-      font-size: 16px;
-      font-family: NovelPro-Light;
-    }
-
-
-
-     .MediaCard-siteUser,   .PlayButton{
-      display: none;
-    }
-     a {
-      color: @aimeRed;
-      font-family: NovelSansPro-SemiBold !important;
-    }
+  .TweetAuthor, .Icon--twitter {
+    display: none;
   }
+
+  .EmbeddedTweet-ancestor blockquote {
+    padding-left: 0;
+  }
+
+  .PrettyLink.media {
+    display: none;
+  }
+
+
+  * {
+    border:none !important;
+    background-color: white !important;
+    font-size: @font-size-base;
+    font-family: NovelPro-Light;
+  }
+
+  .MediaCard-siteUser, .PlayButton{ display: none; }
+
+  a {
+    color: @aimeRed;
+    font-family: NovelSansPro-SemiBold !important;
+  }
+}
 
 
   .embed img {

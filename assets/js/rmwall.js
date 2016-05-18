@@ -5,6 +5,8 @@ $(function(){
 
   var lineTimer = 5000;
 
+
+
   function showInfo(sheet){
 
     console.log(sheet.voc.elements);
@@ -24,8 +26,11 @@ $(function(){
     $('#main').html(RM.list( {procedures:data} ) );
     $("a.embed").oembed(null,{ embedMethod: 'fill' });
 
-
-
+    // great embed
+    setTimeout(function(d){
+      $("iframe").wrap('<div class="embed-responsive embed-responsive-16by9"/>');
+      $("iframe").addClass('embed-responsive-item');
+    }, 5000)
 
     slideShowLoop();
 
