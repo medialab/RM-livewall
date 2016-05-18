@@ -1,0 +1,68 @@
+@import '../../bower_components/bootstrap/less/bootstrap.less';
+@import 'fonts.css';
+
+.embed {
+  width: 100%;
+}
+@aimeRed : #c0171d;
+body {
+  /*background-color: grey;*/
+   font-family: NovelPro-SemiBold;
+   color:@aimeRed;
+
+}
+
+h1 {
+  text-align: center;
+
+}
+  twitterwidget {
+    float: left;
+  }
+
+  twitterwidget::shadow {
+
+    .FollowButton, .Tweet-actions, time{
+      visibility: hidden;
+    }
+
+    .TweetAuthor, .Icon--twitter {
+      display: none;
+    }
+
+    .EmbeddedTweet-ancestor blockquote {
+      padding-left: 0;
+    }
+
+    .PrettyLink.media {
+      display: none;
+    }
+
+
+    * {
+      border-radius: 0;
+      border:none;
+      background-color: white !important;
+      font-size: 16px;
+      font-family: NovelPro-Light;
+    }
+
+
+
+     .MediaCard-siteUser,   .PlayButton{
+      display: none;
+    }
+     a {
+      color: @aimeRed;
+      font-family: NovelSansPro-SemiBold !important;
+    }
+  }
+
+
+  .embed img {
+    .img-responsive();
+  }
+
+  .flickr-embed-frame {
+    display: none;
+  }

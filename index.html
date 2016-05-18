@@ -1,90 +1,15 @@
-
-
 <!DOCTYPE html>
 <html>
 <head>
   <title></title>
-  <link rel="stylesheet" type="text/css" href="./assets/css/fonts.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/screen.css">
 </head>
 <body>
 
-<a href="https://twitter.com/AIMEproject/status/730427426052919297" class="embed"></a>
-<a href="https://twitter.com/AIMEproject/status/730745448823193600" class="embed"></a>
-<a href="https://www.youtube.com/watch?v=0pDE4VX_9Kk" class="embed"></a>
-<a href="https://www.flickr.com/photos/79248928@N02/26770390125/" class="embed"></a>
+<div id="main" class="container-fluid"></div>
 
-<script type="text/javascript" src=".//bower_components/jquery/dist/jquery.min.js"></script>
-<script type="text/javascript" src="./bower_components/jquery-oembed-all/jquery.oembed.js"></script>
-<script type="text/javascript">
-
-$(function(){
-   $("a.embed").oembed(null,{
-    embedMethod: 'fill',    // "auto", "append", "fill"
-  });
-
-
-   $("#twitter-widget-0").append('ok')
-});
-
-</script>
-
-<style type="text/css">
-
-.embed {
-  width: 100%;
-}
-body {
-  /*background-color: grey;*/
-}
-  twitterwidget {
-    float: left;
-  }
-  twitterwidget::shadow .FollowButton{
-    visibility: hidden;
-  }
-
-  twitterwidget::shadow .Tweet-actions {
-    visibility: hidden;
-  }
-
-  twitterwidget::shadow .TweetAuthor {
-    /*visibility: hidden;*/
-    display: none;
-  }
-
-  twitterwidget::shadow .EmbeddedTweet-ancestor blockquote {
-    padding-left: 0;
-  }
-
-  twitterwidget::shadow .PrettyLink.media {
-    display: none;
-  }
-  twitterwidget::shadow time {
-    visibility: hidden;
-  }
-
-  twitterwidget::shadow * {
-    border-radius: 0;
-    border:none;
-    background-color: white !important;
-    font-size: 16px;
-    font-family: NovelPro-Light;
-  }
-
-
-
-  twitterwidget::shadow .MediaCard-siteUser, twitterwidget::shadow  .PlayButton{
-    display: none;
-  }
-  twitterwidget::shadow a {
-    color:#c0171d;
-    font-family: NovelSansPro-SemiBold !important;
-  }
-
-  .flickr-embed-frame {
-    display: none;
-  }
-</style>
-
+<script type="text/javascript" src="./assets/js/all.min.js"></script>
+<script type="text/javascript" src="./assets/js/rmwall.js"></script>
+<script type="text/javascript" src="/assets/js/templates.js"></script>
 </body>
 </html>

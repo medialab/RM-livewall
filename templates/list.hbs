@@ -1,0 +1,17 @@
+{{debug}}
+
+{{#each procedures}}
+
+  <div class="row">
+    <h1>{{@key}}</h1>
+    <hr>
+    {{#each this}}
+      <div class="col-sm-4">
+        <a href="{{url}}" class="embed"></a>
+      </div>
+    {{/each}}
+
+  </div>
+
+
+{{/each}}
