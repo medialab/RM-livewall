@@ -3,7 +3,11 @@
 {{#each procedures}}
 
   <div class="section">
-    <h4 class="title">RM!&nbsp;&nbsp;&nbsp;PROCEDURE {{@key}}</h4>
+    <div class="title">
+
+      <h4 class="col-sm-4">PROCEDURE <a href="">#{{@key}}</a></h4>
+      <p class="col-sm-8">Tweet your contribution using <a href="">#ResetModernity!</a> hastag <br/>and <a href="">#[procedure][piece]</a> (ex. <a href="">#D2</a>) to reference items from the exhibition.</p>
+    </div>
     {{#each this}}
       {{#newLine @index}}<div class="row line">{{/newLine}}
         <div class="col-sm-4 embedContainer">

@@ -6730,7 +6730,7 @@ button.close {
 }
 body {
   /*background-color: grey;*/
-  font-family: NovelPro-SemiBold;
+  font-family: NovelPro-Light;
   color: #c0171d;
   padding-bottom: 100vh;
   overflow: hidden;
@@ -6738,6 +6738,13 @@ body {
 body .embedContainer {
   padding-top: 20vh;
   height: 80vh;
+}
+body strong {
+  font-family: NovelSansPro-SemiBold;
+}
+body a {
+  color: #c0171d;
+  font-family: NovelSansPro-SemiBold !important;
 }
 .title {
   display: none;

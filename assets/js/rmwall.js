@@ -3,8 +3,8 @@ $(function(){
   var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1XbBTpqc5lT8_jQ0GrlyVx_otGOdqNNF5z-AbLK2tgf4/pubhtml';
   Tabletop.init({ key: public_spreadsheet_url, callback: showInfo,simpleSheet: false});
 
-  var lineTimer = 5000;
-
+  var lineTimer = 10000;
+  var reloadIn = 10;
 
 
   function showInfo(sheet){
@@ -47,7 +47,11 @@ $(function(){
 
     })
 
-    setTimeout(slideShowLoop, ($(".line").length + 1) * lineTimer );
+
+    reloadIn--;
+
+    if(reloadIn < 1) location.reload();
+    else  setTimeout(slideShowLoop, ($(".line").length + 1) * lineTimer );
 
   }
 
