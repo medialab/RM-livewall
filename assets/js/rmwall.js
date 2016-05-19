@@ -20,7 +20,7 @@ $(function(){
         tags: d.hashtag.match(/#\S+/g)
       };
     })
-    .groupBy(function(d){return d.location.p;})
+    .groupBy(function(d){return d.location.p+''+d.location.id;})
     .value();
 
     $('#main').html(RM.list( {procedures:data} ) );
