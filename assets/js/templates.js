@@ -2,11 +2,11 @@ this["RM"] = this["RM"] || {};
 this["RM"]["list"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
     var stack1, helper, alias1=depth0 != null ? depth0 : {};
 
-  return "\n  <div class=\"section\">\n    <div class=\"title\">\n\n      <h4 class=\"col-sm-4\">PROCEDURE <a href=\"\">#"
+  return "\n  <div class=\"section\">\n    <div class=\"title\">\n\n      <h4 class=\"col-sm-4\">#ResetModernity! <a href=\"\">"
     + container.escapeExpression(((helper = (helper = helpers.key || (data && data.key)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(alias1,{"name":"key","hash":{},"data":data}) : helper)))
-    + "</a></h4>\n      <p class=\"col-sm-8\">Tweet your contribution using <a href=\"\">#ResetModernity!</a> hastag <br/>and <a href=\"\">#[procedure][piece]</a> (ex. <a href=\"\">#D2</a>) to reference items from the exhibition.</p>\n    </div>\n"
+    + "</a></h4>\n      <p class=\"col-sm-8\">Tweet your contribution using <a href=\"\">#ResetModernity!</a> hashtag <br/>and <a href=\"\">#[procedure][piece]</a> (ex. <a href=\"\">#D2</a>) to refer to items from the exhibition.</p>\n    </div>\n"
     + ((stack1 = helpers.each.call(alias1,depth0,{"name":"each","hash":{},"fn":container.program(2, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
-    + "\n\n\n  </div>\n\n\n";
+    + "  </div>\n\n";
 },"2":function(container,depth0,helpers,partials,data) {
     var stack1, helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing;
 

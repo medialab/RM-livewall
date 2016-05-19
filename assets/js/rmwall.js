@@ -5,22 +5,22 @@ $(function(){
 
   var lineTimer = 10000;
   var reloadIn = 10;
-
+  var currentSlide = 0;
 
   function showInfo(sheet){
 
     console.log(sheet.voc.elements);
 
     var data = _(sheet.medias.elements)
-    .sortBy('location')
-    .map(function(d){
-      return {
-        location:getLocation(d.location),
-        url:d.url,
-        tags: d.hashtag.match(/#\S+/g)
-      };
-    })
-    .groupBy(function(d){return d.location.p+''+d.location.id;})
+    // .sortBy('location')
+    // .map(function(d){
+    //   return {
+    //     location:d.location, //getLocation(d.location),
+    //     url:d.url,
+    //     tags: d.hashtag.match(/#\S+/g)
+    //   };
+    // })
+    .groupBy('location')
     .value();
 
     $('#main').html(RM.list( {procedures:data} ) );
@@ -32,30 +32,25 @@ $(function(){
       $("iframe").addClass('embed-responsive-item');
     }, 5000)
 
-    slideShowLoop();
+    setInterval(function(){
+      nextSlide();
+    }, lineTimer)
+  }
+
+  function nextSlide(){
+    currentSlide = (currentSlide+1)%$(".line").length;
+    $("body").scrollTo($('.line:eq( '+currentSlide+' )'), 800);
+
+    if(currentSlide == 0){
+      if(reloadIn < 1) location.reload();
+      else reloadIn++;
+    }
 
   }
 
-
-  function slideShowLoop(){
-    $(".line").each(function(i){
-
-      var that = this;
-      setTimeout(function(d){
-        $("body").scrollTo($(that), 800);
-      }, i * lineTimer )
-
-    })
-
-
-    reloadIn--;
-
-    if(reloadIn < 1) location.reload();
-    else  setTimeout(slideShowLoop, ($(".line").length + 1) * lineTimer );
-
-  }
-
+  $( "body" ).keydown(function( event ) { nextSlide() })
   $(window).scroll(fixTitle);
+
   function fixTitle() {
     $('.section').each(function () {
       var $this = $(this);
@@ -70,8 +65,6 @@ $(function(){
     });
   }
 
-
-
   function getLocation(hash){
 
     var re1='(#)';  // Any Single Character 1
@@ -85,14 +78,11 @@ $(function(){
     return {p:undefined, id:0}
   }
 
+  Handlebars.registerHelper("newLine", function(index_count,block) {
 
-
-
-Handlebars.registerHelper("newLine", function(index_count,block) {
-
-  if(parseInt(index_count)%3=== 0){
-    return block.fn(this);}
-});
+    if(parseInt(index_count)%3=== 0){
+      return block.fn(this);}
+  });
 
   Handlebars.registerHelper('debug', function(optionalValue) {
     console.log('Current Context');
