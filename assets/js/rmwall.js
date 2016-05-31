@@ -3,10 +3,10 @@ $(function(){
   var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1XbBTpqc5lT8_jQ0GrlyVx_otGOdqNNF5z-AbLK2tgf4/pubhtml';
   Tabletop.init({ key: public_spreadsheet_url, callback: showInfo,simpleSheet: false});
 
-  var lineTimer = 10000;
+  var lineTimer = 1000;
   var reloadIn = 10;
   var currentSlide = 0;
-
+  var interval;
   function showInfo(sheet){
 
     console.log(sheet.voc.elements);
@@ -32,13 +32,15 @@ $(function(){
       $("iframe").addClass('embed-responsive-item');
     }, 5000)
 
-    setInterval(function(){
-      nextSlide();
+    interval = setInterval(function(){
+      nextSlide(1);
     }, lineTimer)
   }
 
-  function nextSlide(){
-    currentSlide = (currentSlide+1)%$(".line").length;
+  function nextSlide(way){
+    // console.log('goto',way);
+
+    currentSlide = (currentSlide+way)%$(".line").length;
     $("body").scrollTo($('.line:eq( '+currentSlide+' )'), 800);
 
     if(currentSlide == 0){
@@ -48,7 +50,16 @@ $(function(){
 
   }
 
-  $( "body" ).keydown(function( event ) { nextSlide() })
+  $( "body" ).keydown(function( event ) {
+
+    event.preventDefault();
+    clearInterval(interval);
+
+    if ( event.which == 40 ) nextSlide(1);
+    if ( event.which == 38 ) nextSlide(-1);
+
+  });
+
   $(window).scroll(fixTitle);
 
   function fixTitle() {

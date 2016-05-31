@@ -6763,6 +6763,12 @@ body a {
 twitterwidget {
   float: left;
 }
+.instagram-media {
+  height: 60vh !important;
+}
+.embed-responsive {
+  overflow: visible;
+}
 twitterwidget::shadow .FollowButton,
 twitterwidget::shadow .Tweet-actions,
 twitterwidget::shadow time {
