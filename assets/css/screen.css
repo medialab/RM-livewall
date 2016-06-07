@@ -6780,13 +6780,17 @@ twitterwidget::shadow .Icon--twitter {
 }
 twitterwidget::shadow .EmbeddedTweet-ancestor blockquote {
   padding-left: 0;
+  border: none;
+}
+twitterwidget::shadow .EmbeddedTweet-ancestor *,
+twitterwidget::shadow .EmbeddedTweet-ancestor {
+  background-color: white !important;
 }
 twitterwidget::shadow .PrettyLink.media {
   display: none;
 }
 twitterwidget::shadow * {
   border: none !important;
-  background-color: white !important;
   font-size: 20px;
   font-family: NovelPro-Light;
 }

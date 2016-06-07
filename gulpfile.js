@@ -80,4 +80,4 @@ gulp.task('serve', function() {
 
 
 gulp.task('build',['less', 'js', 'templates']);
-gulp.task('default', ['build', 'watch']);
+gulp.task('default', ['build', 'serve']);
